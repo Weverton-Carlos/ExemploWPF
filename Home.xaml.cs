@@ -18,7 +18,7 @@ namespace ExemploWpfApp
 	/// <summary>
 	/// Interaction logic for Home.xaml
 	/// </summary>
-	public partial class Home : Page
+	public partial class Home : Window
 	{
 		public Home()
 		{
@@ -27,8 +27,12 @@ namespace ExemploWpfApp
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			// View Expense Report
-			Report reportPage = new Report(this.peopleListBox.SelectedItem);
-			this.NavigationService.Navigate(reportPage);
+			//Report reportPage = new Report(this.peopleListBox.SelectedItem);
+
+			//Application.Current.MainWindow = new Home();
+			//Application.Current.MainWindow.Show();
+
+			//this.NavigationService.Navigate(reportPage);
 		}
 	}
 }

@@ -59,9 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DelegateCommand.cs" />
-    <Compile Include="NotifyIconResources.xaml.cs">
-      <DependentUpon>NotifyIconResources.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="NotifyIconViewModel.cs" />
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
     </Compile>

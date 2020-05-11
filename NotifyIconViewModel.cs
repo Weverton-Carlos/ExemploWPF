@@ -4,27 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ExemploWpfApp
 {
-	/// <summary>
-	/// Interaction logic for NotifyIconResources.xaml
-	/// </summary>
-	public partial class NotifyIconResources : Page
-	{
-		//public NotifyIconResources()
-		//{
-		//	InitializeComponent();
-		//}
-
+    /// <summary>
+    /// Provides bindable properties and commands for the NotifyIcon. In this sample, the
+    /// view model is assigned to the NotifyIcon in XAML. Alternatively, the startup routing
+    /// in App.xaml.cs could have created this view model, and assigned it to the NotifyIcon.
+    /// </summary>
+    public class NotifyIconViewModel
+    {
         /// <summary>
         /// Shows a window, if none is already open.
         /// </summary>
@@ -36,7 +26,21 @@ namespace ExemploWpfApp
                     CanExecuteFunc = () => Application.Current.MainWindow == null,
                     CommandAction = () =>
                     {
-                        Application.Current.MainWindow = new MainWindow();
+                        Application.Current.MainWindow = new Home();
+                        Application.Current.MainWindow.Show();
+                    }
+                };
+            }
+        }
+        public ICommand ShowWindowCommand2
+        {
+            get {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () => Application.Current.MainWindow == null,
+                    CommandAction = () =>
+                    {
+                        Application.Current.MainWindow = new Home();
                         Application.Current.MainWindow.Show();
                     }
                 };
@@ -67,6 +71,4 @@ namespace ExemploWpfApp
             }
         }
     }
-
 }
-
